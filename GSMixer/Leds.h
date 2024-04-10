@@ -6,7 +6,7 @@
 #define LED_COLOR_GREEN CRGB::Green
 #define LED_COLOR_ORANGE CRGB::Orange
 #define LED_COLOR_RED CRGB::Red
-#define BRIGHTNESS_LEDS 255  // ValueRange = 0-255
+#define BRIGHTNESS_LEDS 10  // ValueRange = 0-255
 
 // Setup LED's
 CRGB rgb_led[NUM_LEDS];  // color array of the LED RGB strip
