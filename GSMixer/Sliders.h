@@ -23,7 +23,7 @@ public:
   }
 };
 
-Slider slider[]{ { A0, 20 }, { A1, 20 }, { A2, 20 }, { A3, 20 } };  // verschiedene Faktoren. Array später erweitern auf 4 Slider.
+Slider slider[]{ { A0, 5 }, { A1, 20 }, { A2, 20 }, { A3, 20 } };  // verschiedene Faktoren. Array später erweitern auf 4 Slider.
 uint16_t S1;
 uint16_t S2;
 uint16_t S3;

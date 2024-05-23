@@ -22,6 +22,9 @@ void setup() {
   // LEDS Setup
   FastLED.addLeds<WS2812B, PIN_LEDS, GRB>(rgb_led, NUM_LEDS);
   FastLED.setBrightness(BRIGHTNESS_LEDS);
+
+  TCA9548A(0);
+  TCA9548A(1);
 }
 
 void loop() {
@@ -39,6 +42,9 @@ void loop() {
 
     inputString = "";
   }
+
+  oledDisplayCenter(0, "OLED 1");
+  oledDisplayCenter(1, "OLED 2");
 
   unsigned long currentMillis = millis();
   if (currentMillis - previousMillis >= 20) {
