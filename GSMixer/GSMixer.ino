@@ -7,6 +7,8 @@
 #include "Leds.h"
 #include "OLEDs.h"
 
+unsigned long previousMillis = millis();
+
 void setup() {
   Serial.begin(9600);
   Wire.begin();
@@ -38,7 +40,11 @@ void loop() {
     inputString = "";
   }
 
-  sendSliderValues();
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousMillis >= 20) {
+    previousMillis = currentMillis;
+    sendSliderValues();
+  }
 
   // LEDs müssen vermutlich neu berechnet werden. Wokwi hat es nicht geklappt. Evtl. klappt es mit physischen LEDs
   int sliderval_a = calcSlidersForLEDS(S1, 8, 0);
@@ -83,5 +89,4 @@ void loop() {
   }
 
   FastLED.show();
-  delay(20);
 }
